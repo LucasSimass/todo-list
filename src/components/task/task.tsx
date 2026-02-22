@@ -1,0 +1,50 @@
+import { useState, type Dispatch, type JSX } from "react";
+import "./task.css"
+import TaskContent from "./taskContent/taskContent";
+import type React from "react";
+import DoneInput from "./doneInput/doneInput";
+
+function Task({
+  taskContent, 
+  taskDataToFinish, 
+  setTasks, 
+  itemId}
+  : {
+    taskContent: string, taskDataToFinish: string,setTasks: Dispatch<React.SetStateAction<JSX.Element[]>>, itemId: string}) {
+
+  const [isExisting, setIsExisting] = useState(true);
+  
+  const deleteTask = () => {
+    setIsExisting(false)
+  }
+
+  return (
+    <div 
+    className={"task " + (isExisting ? "fade-in" : "fade-out")}
+    onAnimationEnd={() => {
+      // stop to destroy animation if is being born
+      if (isExisting){ return; }
+      setTasks(tasks => {
+        return tasks.filter(task => {
+          return task.props.itemId !== itemId;
+        });
+      })
+    }}
+    >
+      <div className="task-left-side">
+         
+         <DoneInput deleteTask={deleteTask}/>
+
+        <TaskContent 
+          taskContentAdvice="Tarefa"
+          taskContent={taskContent}
+          isTaskAlignStart={true} 
+        />
+      </div>
+
+      <TaskContent taskContentAdvice="Data para término" taskContent={taskDataToFinish} isTaskAlignStart={false}/>
+    </div>
+  )
+}
+
+export default Task;

@@ -1,0 +1,19 @@
+.todo-inputs {
+  display: flex;
+
+  flex-direction: row;
+  gap: 20px;
+
+
+  align-items: end;
+  justify-items: center;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .todo-inputs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    width: 100%;
+  }
+}

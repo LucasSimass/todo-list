@@ -1,0 +1,12 @@
+/* General */
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Body */
+body {
+  background-color: lightblue;
+  
+  /* scroll bar x is hidden */
+  overflow-x: hidden;
+}

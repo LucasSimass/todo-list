@@ -1,0 +1,16 @@
+@import "../../../app/variables.css";
+
+.date-div {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.data-time-input {
+  text-align: left;
+}
+
+.date-text {
+  font-size: var(--text-above-default-size);
+}

@@ -1,0 +1,24 @@
+@import "../../../app/variables.css";
+
+/*TextField Div*/
+.todo-textField {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+/*Textfiel Div Text*/
+.todo-textfield-text {
+  font-size: var(--text-above-default-size);
+}
+
+/*Textfield Input Text*/
+.todo-input-text {
+  background-color: white;
+  border-radius: 5px;
+
+  font-size: 1em;
+  color: black;
+  
+}

@@ -1,0 +1,50 @@
+.task {
+  /*DELETE*/
+  margin: 10px;
+
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+}
+
+.task-left-side {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+.fade-in {
+  animation: fadeInAnimation 0.4s forwards; 
+}
+
+.fade-out {
+  animation: fadeOutAnimation 0.4s forwards; 
+}

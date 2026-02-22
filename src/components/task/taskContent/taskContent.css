@@ -1,0 +1,27 @@
+@import "../../../app/variables.css";
+
+
+.task-content-advice {
+  font-size: var(--text-above-default-size);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.task-content-text {
+  font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+.task-content-start {
+  text-align: start;
+}
+
+.task-content-end {
+  text-align: right;
+}
