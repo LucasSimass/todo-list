@@ -8,6 +8,7 @@ import { getFinalTimeOfCurrentlyISO } from "../utils/time";
 
 function App() {
   const [tasks, setTasks] = useState<JSX.Element[]>([]);
+
   const [taskValue, setTaskValue] = useState("");
   const [taskDateValue, setTaskDateValue] = useState(getFinalTimeOfCurrentlyISO());
 
@@ -23,7 +24,10 @@ function App() {
       setTaskDateValue={setTaskDateValue}
       />
       
-      <Tasks tasks={tasks} />
+      <Tasks 
+      tasks={tasks}  
+      setTasks={setTasks}
+      />
 
       <CreatorLabel />
     </>

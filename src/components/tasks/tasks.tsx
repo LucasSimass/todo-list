@@ -1,12 +1,11 @@
 import type { JSX } from "react";
 import "./tasks.css"
+import { getAllTasksFormatedOnLocalStorage } from "../../utils/taskUtils";
 
-function Tasks({tasks} : {tasks: JSX.Element[]}) {
+function Tasks({tasks, setTasks} : {tasks: JSX.Element[], setTasks: any}) {
   return (
     <div className="tasks-div">
-      {tasks.map((task) => {
-          return task;
-      })}
+      {getAllTasksFormatedOnLocalStorage(setTasks)}
     </div>
   )
 }

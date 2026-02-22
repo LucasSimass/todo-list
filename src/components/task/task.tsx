@@ -3,6 +3,7 @@ import "./task.css"
 import TaskContent from "./taskContent/taskContent";
 import type React from "react";
 import DoneInput from "./doneInput/doneInput";
+import { getAllTasksFormatedOnLocalStorage, removeTaskOnLocalStorage } from "../../utils/taskUtils";
 
 function Task({
   taskContent, 
@@ -24,16 +25,16 @@ function Task({
     onAnimationEnd={() => {
       // stop to destroy animation if is being born
       if (isExisting){ return; }
-      setTasks(tasks => {
-        return tasks.filter(task => {
-          return task.props.itemId !== itemId;
-        });
-      })
+      
+      removeTaskOnLocalStorage(itemId);
+      
+      const tasksFormated = getAllTasksFormatedOnLocalStorage(setTasks);
+      setTasks(tasksFormated);
     }}
     >
       <div className="task-left-side">
          
-         <DoneInput deleteTask={deleteTask}/>
+        <DoneInput deleteTask={deleteTask}/>
 
         <TaskContent 
           taskContentAdvice="Tarefa"

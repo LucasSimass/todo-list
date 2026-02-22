@@ -1,8 +1,7 @@
 import type { Dispatch, JSX } from "react";
 import "./textInput.css"
-import { addTask } from "../../../utils/taskUtils";
+import { addTask } from "../../../utils/taskUtils.tsx";
 import type React from "react";
-import { capitalize } from "../../../utils/text";
 
 function TextInput({
   isTextAbove, 
@@ -29,10 +28,11 @@ function TextInput({
       return; 
     }
 
-
     addTask({
       tasks, 
-      taskDateToFinish, setTaskDataToFinish, setTaskInput,
+      taskDateToFinish, 
+      setTaskDataToFinish, 
+      setTaskInput,
       setTasks,
       taskContent
     })
